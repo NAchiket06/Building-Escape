@@ -1,0 +1,27 @@
+[
+    {
+        "file": "C:\\\\Unreal\\\\Escape\\\\Source\\\\Escape\\\\Escape.Build.cs",
+        "command": "cl.exe @\"C:\\Unreal\\Escape\\.vscode\\compileCommands_Escape\\Escape.210.rsp\"",
+        "directory": "C:\\Program Files\\Epic Games\\UE_4.27\\Engine\\Source"
+    },
+    {
+        "file": "C:\\\\Unreal\\\\Escape\\\\Source\\\\Escape\\\\Escape.cpp",
+        "command": "cl.exe @\"C:\\Unreal\\Escape\\.vscode\\compileCommands_Escape\\Escape.210.rsp\"",
+        "directory": "C:\\Program Files\\Epic Games\\UE_4.27\\Engine\\Source"
+    },
+    {
+        "file": "C:\\\\Unreal\\\\Escape\\\\Source\\\\Escape\\\\Escape.h",
+        "command": "cl.exe @\"C:\\Unreal\\Escape\\.vscode\\compileCommands_Escape\\Escape.210.rsp\"",
+        "directory": "C:\\Program Files\\Epic Games\\UE_4.27\\Engine\\Source"
+    },
+    {
+        "file": "C:\\\\Unreal\\\\Escape\\\\Source\\\\Escape\\\\EscapeGameModeBase.cpp",
+        "command": "cl.exe @\"C:\\Unreal\\Escape\\.vscode\\compileCommands_Escape\\Escape.210.rsp\"",
+        "directory": "C:\\Program Files\\Epic Games\\UE_4.27\\Engine\\Source"
+    },
+    {
+        "file": "C:\\\\Unreal\\\\Escape\\\\Source\\\\Escape\\\\EscapeGameModeBase.h",
+        "command": "cl.exe @\"C:\\Unreal\\Escape\\.vscode\\compileCommands_Escape\\Escape.210.rsp\"",
+        "directory": "C:\\Program Files\\Epic Games\\UE_4.27\\Engine\\Source"
+    }
+]
