@@ -25,22 +25,22 @@
         "directory": "C:\\Program Files\\Epic Games\\UE_4.27\\Engine\\Source"
     },
     {
-        "file": "c:\\\\Unreal\\\\Escape\\\\Source\\\\Escape\\\\WorldPosition.h",
+        "file": "C:\\\\Unreal\\\\Escape\\\\Source\\\\Escape\\\\OpenDoor.cpp",
         "command": "cl.exe @\"C:\\Unreal\\Escape\\.vscode\\compileCommands_Default\\Escape.210.rsp\"",
         "directory": "C:\\Program Files\\Epic Games\\UE_4.27\\Engine\\Source"
     },
     {
-        "file": "c:\\\\Unreal\\\\Escape\\\\Source\\\\Escape\\\\WorldPosition.cpp",
+        "file": "C:\\\\Unreal\\\\Escape\\\\Source\\\\Escape\\\\OpenDoor.h",
         "command": "cl.exe @\"C:\\Unreal\\Escape\\.vscode\\compileCommands_Default\\Escape.210.rsp\"",
         "directory": "C:\\Program Files\\Epic Games\\UE_4.27\\Engine\\Source"
     },
     {
-        "file": "c:\\\\Unreal\\\\Escape\\\\Source\\\\Escape\\\\OpenDoor.cpp",
+        "file": "C:\\\\Unreal\\\\Escape\\\\Source\\\\Escape\\\\WorldPosition.cpp",
         "command": "cl.exe @\"C:\\Unreal\\Escape\\.vscode\\compileCommands_Default\\Escape.210.rsp\"",
         "directory": "C:\\Program Files\\Epic Games\\UE_4.27\\Engine\\Source"
     },
     {
-        "file": "c:\\\\Unreal\\\\Escape\\\\Source\\\\Escape\\\\OpenDoor.h",
+        "file": "C:\\\\Unreal\\\\Escape\\\\Source\\\\Escape\\\\WorldPosition.h",
         "command": "cl.exe @\"C:\\Unreal\\Escape\\.vscode\\compileCommands_Default\\Escape.210.rsp\"",
         "directory": "C:\\Program Files\\Epic Games\\UE_4.27\\Engine\\Source"
     }
