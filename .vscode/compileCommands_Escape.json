@@ -43,5 +43,15 @@
         "file": "C:\\\\Unreal\\\\Escape\\\\Source\\\\Escape\\\\WorldPosition.h",
         "command": "cl.exe @\"C:\\Unreal\\Escape\\.vscode\\compileCommands_Escape\\Escape.210.rsp\"",
         "directory": "C:\\Program Files\\Epic Games\\UE_4.27\\Engine\\Source"
+    },
+    {
+        "file": "c:\\\\Unreal\\\\Escape\\\\Source\\\\Escape\\\\Grabber.h",
+        "command": "cl.exe @\"C:\\Unreal\\Escape\\.vscode\\compileCommands_Escape\\Escape.210.rsp\"",
+        "directory": "C:\\Program Files\\Epic Games\\UE_4.27\\Engine\\Source"
+    },
+    {
+        "file": "c:\\\\Unreal\\\\Escape\\\\Source\\\\Escape\\\\Grabber.cpp",
+        "command": "cl.exe @\"C:\\Unreal\\Escape\\.vscode\\compileCommands_Escape\\Escape.210.rsp\"",
+        "directory": "C:\\Program Files\\Epic Games\\UE_4.27\\Engine\\Source"
     }
 ]
