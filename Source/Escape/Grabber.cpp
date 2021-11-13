@@ -1,20 +1,18 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #include "DrawDebugHelpers.h"
 #include "GameFramework/PlayerController.h"
 #include "Engine/World.h"
 #include "Grabber.h"
 
 #define OUT
-// Sets default values for this component's properties
+
 UGrabber::UGrabber()
 {
-	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
-	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
 }
 
-// Called when the game starts
+/*
+		STARTING POINT
+*/
 void UGrabber::BeginPlay()
 {
 	Super::BeginPlay();
@@ -55,7 +53,6 @@ void UGrabber::SetupInputComponent()
 	}
 }
 
-
 /*
 	Get Actors with physics collision and attach the physics handle
 */
@@ -64,13 +61,7 @@ void UGrabber::Grab()
 	/*
 		UE_LOG(LogTemp, Warning, TEXT("Grabber pressed."));
 	*/
-	FVector PlayerLocation;
-	FRotator PlayerRotation;
-
-	// Get players viewport
-	GetWorld()->GetFirstPlayerController()->GetPlayerViewPoint(OUT PlayerLocation, OUT PlayerRotation);
-
-	FVector LineTraceEnd = PlayerLocation + PlayerRotation.Vector() * Reach;
+	FVector LineTraceEnd = GetLineTraceEnd();
 
 	FHitResult HitResult = GetFirstPhysicsBodyInReach();
 	UPrimitiveComponent* ComponentToGrab = HitResult.GetComponent();
@@ -84,6 +75,9 @@ void UGrabber::Grab()
 		);
 }
 
+/*
+	Release grabbed actors when the grab key is released.
+*/
 void UGrabber::Release()
 {
 	/*
@@ -99,13 +93,7 @@ void UGrabber::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompone
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
-	FVector PlayerLocation;
-	FRotator PlayerRotation;
-
-	// Get players viewport
-	GetWorld()->GetFirstPlayerController()->GetPlayerViewPoint(OUT PlayerLocation, OUT PlayerRotation);
-
-	FVector LineTraceEnd = PlayerLocation + PlayerRotation.Vector() * Reach;
+	FVector LineTraceEnd = GetLineTraceEnd();
 
 	if (PhysicsHandle->GrabbedComponent)
 	{
@@ -147,4 +135,15 @@ FHitResult UGrabber::GetFirstPhysicsBodyInReach() const
 	}
 
 	return Hit;
+}
+
+FVector UGrabber::GetLineTraceEnd()
+{
+	FVector PlayerLocation;
+	FRotator PlayerRotation;
+
+	// Get players viewport
+	GetWorld()->GetFirstPlayerController()->GetPlayerViewPoint(OUT PlayerLocation, OUT PlayerRotation);
+
+	return PlayerLocation + PlayerRotation.Vector() * Reach;
 }
