@@ -2,22 +2,19 @@
 
 
 #include "Engine/World.h"
+#include "Components/AudioComponent.h"
 #include "GameFramework/PlayerController.h"
 #include "OpenDoor.h"
 #include <GameFramework/Actor.h>
 
-// Sets default values for this component's properties
 UOpenDoor::UOpenDoor()
 {
-	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
-	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
-
-	// ...
 }
 
-
-// Called when the game starts
+/*
+		START	
+*/
 void UOpenDoor::BeginPlay()
 {
 	Super::BeginPlay();
@@ -26,11 +23,8 @@ void UOpenDoor::BeginPlay()
 	CurrentYaw = InitialYaw;
 	TargetYaw += InitialYaw;
 
-	/*
-	FRotator CurrentRotation =  GetOwner()->GetActorRotation();
-	CurrentRotation.Yaw =  CurrentRotation.Yaw -90.f;
-	GetOwner()->SetActorRotation(CurrentRotation);
-	*/
+	GetAudioComponent();
+
 	if(!PressurePlate)
 	{
 		UE_LOG(LogTemp,Error,TEXT("%s has no pressure plate set"), *GetOwner()->GetName());
@@ -52,13 +46,26 @@ void UOpenDoor::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompon
 	{
 		OpenDoor(DeltaTime);
 		DoorLastOpened = GetWorld()->GetTimeSeconds();
+		DoorAudio->Play();
 	}
 
 	if(DoorLastOpened + DoorClosedDelay < GetWorld()->GetTimeSeconds()) 
 	{
 		CloseDoor(DeltaTime);
+		DoorAudio->Play();
+
 	}
 	
+}
+
+void UOpenDoor::GetAudioComponent()
+{
+	DoorAudio = GetOwner()->FindComponentByClass<UAudioComponent>();
+
+	if (!DoorAudio)
+	{
+		UE_LOG(LogTemp, Error, TEXT("No audio component on %s."), *GetOwner()->GetName());
+	}
 }
 
 void UOpenDoor::OpenDoor(float DeltaTime)
@@ -79,6 +86,10 @@ void UOpenDoor::CloseDoor(float DeltaTime)
 
 float UOpenDoor::TotalMassOfActors() const
 {
+	if (!PressurePlate)
+	{
+		return 0.f;
+	}
 	float TotalMass = 0.f;
 
 	// Find all overlapping actors in the collider volume
